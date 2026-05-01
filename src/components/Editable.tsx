@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
+import { createElement, useEffect, useRef } from "react";
 import { useEditable } from "@/hooks/useEditableContent";
 import { cn } from "@/lib/utils";
 
 interface EditableProps {
   contentKey: string;
   defaultValue: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: string;
   className?: string;
   multiline?: boolean;
 }
@@ -13,7 +13,7 @@ interface EditableProps {
 export const Editable = ({
   contentKey,
   defaultValue,
-  as: Tag = "span",
+  as = "span",
   className,
   multiline = false,
 }: EditableProps) => {
@@ -27,23 +27,27 @@ export const Editable = ({
     }
   }, [value, isEditing]);
 
-  return (
-    <Tag
-      ref={ref as never}
-      contentEditable={isEditing}
-      suppressContentEditableWarning
-      onBlur={(e: React.FocusEvent<HTMLElement>) => {
-        const next = multiline ? e.currentTarget.innerText : e.currentTarget.innerText.replace(/\n/g, " ");
-        if (next !== value) set(contentKey, next);
-      }}
-      className={cn(
+  const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
+    const next = multiline
+      ? e.currentTarget.innerText
+      : e.currentTarget.innerText.replace(/\n/g, " ");
+    if (next !== value) set(contentKey, next);
+  };
+
+  return createElement(
+    as,
+    {
+      ref,
+      contentEditable: isEditing,
+      suppressContentEditableWarning: true,
+      onBlur: handleBlur,
+      className: cn(
         className,
         isEditing &&
           "outline-none ring-1 ring-primary/40 ring-offset-2 ring-offset-background rounded-md px-1 -mx-1 cursor-text hover:ring-primary/70 transition-smooth"
-      )}
-    >
-      {value}
-    </Tag>
+      ),
+    },
+    value
   );
 };
 
