@@ -195,13 +195,24 @@ const Index = () => {
             defaultValue="Schreib mir einfach eine E-Mail. Wir besprechen unverbindlich, was du brauchst – und ich melde mich mit einem Vorschlag bei dir."
             className="mt-4 text-muted-foreground text-lg max-w-xl mx-auto"
           />
-          <a
-            href="mailto:henry.mlodoch@icloud.com"
-            className="mt-8 inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary text-primary-foreground font-semibold shadow-glow hover:scale-[1.02] transition-smooth"
-          >
-            <Mail className="h-5 w-5" />
-            henry.mlodoch@icloud.com
-          </a>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="mailto:henry.mlodoch@icloud.com"
+              className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary text-primary-foreground font-semibold shadow-glow hover:scale-[1.02] transition-smooth"
+            >
+              <Mail className="h-5 w-5" />
+              henry.mlodoch@icloud.com
+            </a>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="inline-flex items-center gap-2 px-5 py-4 rounded-full border border-border bg-secondary/60 text-foreground font-medium hover:bg-secondary transition-smooth"
+              aria-label="E-Mail-Adresse kopieren"
+            >
+              {copied ? <Check className="h-5 w-5 text-primary" /> : <Copy className="h-5 w-5" />}
+              {copied ? "Kopiert" : "Kopieren"}
+            </button>
+          </div>
           <Editable
             as="p"
             contentKey="cta.note"
