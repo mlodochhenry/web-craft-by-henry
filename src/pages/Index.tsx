@@ -226,9 +226,14 @@ const Index = () => {
       <footer className="border-t border-border">
         <div className="container py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <Editable contentKey="footer.copy" defaultValue="© 2026 Henry Mlodoch · Mlodoch Web" />
-          <a href="mailto:henry.mlodoch@icloud.com" className="hover:text-foreground transition-smooth">
-            henry.mlodoch@icloud.com
-          </a>
+          <div className="flex items-center gap-5">
+            <a href="/impressum" className="hover:text-foreground transition-smooth">
+              Impressum
+            </a>
+            <a href="mailto:henry.mlodoch@icloud.com" className="hover:text-foreground transition-smooth">
+              henry.mlodoch@icloud.com
+            </a>
+          </div>
         </div>
       </footer>
 
