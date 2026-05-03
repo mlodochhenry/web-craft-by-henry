@@ -7,6 +7,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const Index = () => {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("henry.mlodoch@icloud.com");
+      setCopied(true);
+      toast.success("E-Mail-Adresse kopiert");
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      toast.error("Kopieren fehlgeschlagen");
+    }
+  };
   return (
     <main className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* NAV */}
