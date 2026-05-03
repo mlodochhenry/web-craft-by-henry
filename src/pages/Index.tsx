@@ -2,7 +2,9 @@ import { Editable, EditableImage } from "@/components/Editable";
 import { EditModeBar } from "@/components/EditModeBar";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-abstract.jpg";
-import { ArrowRight, Code2, Sparkles, LifeBuoy, Mail, GraduationCap } from "lucide-react";
+import { ArrowRight, Code2, Sparkles, LifeBuoy, Mail, GraduationCap, Copy, Check } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const Index = () => {
   return (
