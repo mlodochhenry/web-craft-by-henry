@@ -173,7 +173,7 @@ const Index = () => {
               <li className="flex items-center gap-3"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Lernfreudig & motiviert</li>
             </ul>
           </div>
-          <div className="relative aspect-[4/5] rounded-3xl gradient-border overflow-hidden shadow-card animate-float">
+          <div className="relative aspect-[4/5] w-1/2 mx-auto rounded-3xl gradient-border overflow-hidden shadow-card animate-float">
             <EditableImage
               contentKey="about.image"
               defaultSrc={heroImg}
