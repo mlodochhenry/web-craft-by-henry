@@ -31,6 +31,7 @@ const Index = () => {
             <a href="#leistungen" className="hover:text-foreground transition-smooth">Leistungen</a>
             <a href="#ueber" className="hover:text-foreground transition-smooth">Über mich</a>
             <a href="#kontakt" className="hover:text-foreground transition-smooth">Kontakt</a>
+            <a href="/bewertungen" className="hover:text-foreground transition-smooth">Bewertungen</a>
           </div>
           <Button asChild variant="secondary" size="sm" className="hidden sm:inline-flex">
             <a href="#kontakt">Anfragen</a>
@@ -227,6 +228,9 @@ const Index = () => {
         <div className="container py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <Editable contentKey="footer.copy" defaultValue="© 2026 Henry Mlodoch · Mlodoch Web" />
           <div className="flex items-center gap-5">
+            <a href="/bewertungen" className="hover:text-foreground transition-smooth">
+              Bewertungen
+            </a>
             <a href="/impressum" className="hover:text-foreground transition-smooth">
               Impressum
             </a>

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Impressum from "./pages/Impressum.tsx";
+import Bewertungen from "./pages/Bewertungen.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { EditableProvider } from "@/hooks/useEditableContent";
 
@@ -20,6 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/impressum" element={<Impressum />} />
+            <Route path="/bewertungen" element={<Bewertungen />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
