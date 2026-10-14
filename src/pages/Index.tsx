@@ -10,7 +10,7 @@ const Index = () => {
   const [copied, setCopied] = useState(false);
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText("henry.mlodoch@icloud.com");
+      await navigator.clipboard.writeText("Henry_mlodoch@icloud.com");
       setCopied(true);
       toast.success("E-Mail-Adresse kopiert");
       setTimeout(() => setCopied(false), 2000);
@@ -198,11 +198,11 @@ const Index = () => {
           />
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="mailto:henry.mlodoch@icloud.com"
+              href="mailto:Henry_mlodoch@icloud.com"
               className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary text-primary-foreground font-semibold shadow-glow hover:scale-[1.02] transition-smooth"
             >
               <Mail className="h-5 w-5" />
-              henry.mlodoch@icloud.com
+              Henry_mlodoch@icloud.com
             </a>
             <button
               type="button"
@@ -234,8 +234,8 @@ const Index = () => {
             <a href="/impressum" className="hover:text-foreground transition-smooth">
               Impressum
             </a>
-            <a href="mailto:henry.mlodoch@icloud.com" className="hover:text-foreground transition-smooth">
-              henry.mlodoch@icloud.com
+            <a href="mailto:Henry_mlodoch@icloud.com" className="hover:text-foreground transition-smooth">
+              Henry_mlodoch@icloud.com
             </a>
           </div>
         </div>
