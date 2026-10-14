@@ -45,7 +45,7 @@ const Impressum = () => {
                 <Editable
                   as="span"
                   contentKey="impressum.email"
-                  defaultValue="henry.mlodoch@icloud.com"
+                  defaultValue="Henry_mlodoch@icloud.com"
                 />
               </p>
             </div>
